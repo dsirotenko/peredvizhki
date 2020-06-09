@@ -10,7 +10,7 @@ target_compile_features(default INTERFACE cxx_std_17)
 
 include(cmake/CompilerWarnings.cmake)
 set_project_warnings(default)
-
+find_package(SFML REQUIRED COMPONENTS graphics)
 enable_testing()
 add_subdirectory(external/catch2)
 add_subdirectory(src)
