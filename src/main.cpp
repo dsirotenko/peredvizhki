@@ -35,7 +35,7 @@ int main() {
 
   for (int i = 1; i <= 8; i++)
     for (int j = 1; j <= 8; j++) {
-      grid[i][j].kind = rand() % 7;
+      grid[i][j].kind = rand() % 3;
       grid[i][j].col = j;
       grid[i][j].row = i;
       grid[i][j].x = j * ts;
@@ -75,8 +75,8 @@ int main() {
         click = 1;
     }
     // Match finding
-    for (int i = 0; i <= 8; i++)
-      for (int j = 0; j <= 8; j++) {
+    for (int i = 1; i <= 8; i++)
+      for (int j = 1; j <= 8; j++) {
         if (grid[i][j].kind == grid[i + 1][j].kind)
           if (grid[i][j].kind == grid[i - 1][j].kind)
             for (int n = -1; n <= 1; n++)
@@ -116,8 +116,8 @@ int main() {
             }
     // Get score
     int score = 0;
-    for (int i = 0; i <= 8; i++)
-      for (int j = 0; j <= 8; j++)
+    for (int i = 1; i <= 8; i++)
+      for (int j = 1; j <= 8; j++)
         score += grid[i][j].match;
 
     // Second swap if no match
